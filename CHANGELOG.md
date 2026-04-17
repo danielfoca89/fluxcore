@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.0 (2026-04-17)
+
+
+### Features
+
+* first commit ([24745f1](https://github.com/danielfoca89/fluxcore/commit/24745f1f468c5f9916420c262b64d4a4dc8371c3))
+
+
+### Bug Fixes
+
+* add executable permissions to all shell scripts ([e8951aa](https://github.com/danielfoca89/fluxcore/commit/e8951aa34d83cca14864dbc538afb81fdb0f1c59))
+* create /run/sshd before sshd -t validation (privilege separation dir) ([09168e8](https://github.com/danielfoca89/fluxcore/commit/09168e807409a624429a1d35e2eec24cee96528a))
+
 ## [1.0.0] — 2026-03-22
 
 ### 🚀 Initial Release — FluxCore VPS Orchestrator
