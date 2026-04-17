@@ -1,0 +1,34 @@
+name: Code Quality (Linting)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: '.'
+
+      - name: bash syntax check (bash -n)
+        run: |
+          find . -name "*.sh" -type f -print0 | xargs -0 -I {} bash -n {}
+
+      - name: Format Check (shfmt)
+        uses: mstruebing/editorconfig-checker-action@main
+
+      - name: Run Bats Tests
+        run: |
+          sudo apt-get update && sudo apt-get install -y bats
+          if [ -d "tests" ]; then
+            bats tests/
+          else
+            echo "No tests directory found, skipping."
+          fi

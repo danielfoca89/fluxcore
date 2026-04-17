@@ -1,0 +1,14 @@
+# ShellCheck configuration for FluxCore
+# https://www.shellcheck.net/wiki/
+
+# Default shell dialect
+shell=bash
+
+# Minimum severity: error, warning, info, style
+severity=warning
+
+# SC1091: Not following sourced files (CI can't resolve dynamic paths)
+disable=SC1091
+
+# Enable optional checks
+enable=all

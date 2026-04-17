@@ -1,0 +1,14 @@
+# shfmt configuration for FluxCore
+# https://github.com/mvdan/sh
+
+# 4-space indentation (matches .editorconfig)
+indent = 4
+
+# Place binary operators at the start of the next line
+binary-next-line = true
+
+# Indent switch cases
+case-indent = true
+
+# No space after redirect operators (e.g., >file not > file)
+space-redirects = false
