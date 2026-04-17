@@ -417,6 +417,9 @@ Include /etc/ssh/sshd_config.d/*.conf"
     
     echo "$SSHD_CONFIG" | run_sudo tee /etc/ssh/sshd_config > /dev/null
     
+    # Ensure privilege separation directory exists (required by sshd -t)
+    run_sudo mkdir -p /run/sshd
+
     local SSH_TEST_OUTPUT
     if ! SSH_TEST_OUTPUT=$(run_sudo sshd -t 2>&1); then
         log_error "SSH configuration is invalid!"
